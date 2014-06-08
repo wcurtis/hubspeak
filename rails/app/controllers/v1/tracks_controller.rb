@@ -18,7 +18,7 @@ class V1::TracksController < ApplicationController
   # POST /tracks
   # POST /tracks.json
   def create
-    @track = Track.new(params[:track])
+    @track = Track.new(track_params)
 
     if @track.save
       render json: @track, status: :created, location: [:v1, @track]
@@ -32,7 +32,7 @@ class V1::TracksController < ApplicationController
   def update
     @track = Track.find(params[:id])
 
-    if @track.update(params[:track])
+    if @track.update(track_params)
       head :no_content
     else
       render json: @track.errors, status: :unprocessable_entity
@@ -46,5 +46,11 @@ class V1::TracksController < ApplicationController
     @track.destroy
 
     head :no_content
+  end
+
+  private
+
+  def track_params
+    params.require(:track).permit(:name, :soundboard_id)
   end
 end

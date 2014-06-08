@@ -10,9 +10,11 @@ var SoundboardController = Ember.ObjectController.extend({
         soundboard: soundboard,
       });
 
-      // TODO: Save track
-      
-      soundboard.get("tracks").pushObject(track);
+      track.save().then(function(track) {
+        soundboard.get("tracks").pushObject(track);
+      }, function(error) {
+        throw error;
+      });
     }
   }
 
