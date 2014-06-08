@@ -12,6 +12,10 @@ var TrackController = Ember.ObjectController.extend({
       track.set('soundbite', soundbite);
     },
 
+    deleteTrack: function() {
+      this.get('model').destroyRecord();
+    },
+
     preview: function() {
       this.send('playTrack', this.get('id'));
     }

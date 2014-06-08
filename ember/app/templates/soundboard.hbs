@@ -14,7 +14,8 @@
       <tr>
         <th>Hubspot Action</th>
         <th>Sound Bite</th>
-        <th>Details</th>
+        <th>Plays</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -32,6 +33,18 @@
           {{/if}}
         </td>
         <td>{{track.playCount}} plays</td>
+        <td>
+          <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              Actions <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Setup Webhook</a></li>
+              <li class="divider"></li>
+              <li><a href="#" {{action 'deleteTrack'}}>Delete</a></li>
+            </ul>
+          </div>
+        </td>
       </tr>
       {{/each}}
     </tbody>
