@@ -12,10 +12,13 @@
       {{#each track in tracks}}
       <tr>
         <td>{{track.name}}</td>
-        <td><div class="btn btn-primary"><span class="glyphicon glyphicon-volume-up"></span> Add Audio</div></td>
+        <td><div class="btn btn-default"><span class="glyphicon glyphicon-volume-up"></span> Add Audio</div></td>
         <td>8 plays</td>
       </tr>
       {{/each}}
     </tbody>
   </table>
+  <div class="actions">
+    <a class="btn btn-primary btn-lg" {{action 'addTrack'}}>New Track</a>
+  </div>
 </div>
