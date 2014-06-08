@@ -4,6 +4,20 @@ var SoundboardRoute = Ember.Route.extend({
     return this.store.find('soundboard', params.soundboard_id);
   },
 
+  setupController: function(controller, model) {
+    this._super(controller, model);
+
+    // Subscribe to pusher
+    this.controllerFor('pusher').subscribeSoundboard(model, function(data) {
+      controller.playTrack(data.track_id);
+    });
+  },
+
+  actions: {
+    willTransition: function(transition) {
+      this.controllerFor('pusher').unsubscribeSoundboard();
+    }
+  }
 });
 
 export default SoundboardRoute;

@@ -48,6 +48,18 @@ class V1::TracksController < ApplicationController
     head :no_content
   end
 
+  def play
+    @track = Track.find(params[:id])
+
+    Pusher["soundboard_#{@track.soundboard_id}"].trigger('play_track', {
+      track_id: @track.id.to_s
+    })
+
+    render json: {
+      :success => true
+    }
+  end
+
   private
 
   def track_params

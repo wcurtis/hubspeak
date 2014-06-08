@@ -1,5 +1,12 @@
 var SoundboardController = Ember.ObjectController.extend({
 
+  playTrack: function(trackId) {
+
+    var track = this.get("tracks").findBy('id', trackId);
+
+    // TODO: Play track!
+  },
+
   actions: {
     addTrack: function() {
 
