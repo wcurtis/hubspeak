@@ -18,7 +18,7 @@ class V1::SoundboardsController < ApplicationController
   # POST /soundboards
   # POST /soundboards.json
   def create
-    @soundboard = Soundboard.new(params[:soundboard])
+    @soundboard = Soundboard.new(soundboard_params)
 
     if @soundboard.save
       render json: @soundboard, status: :created, location: [:v1, @soundboard]
@@ -32,7 +32,7 @@ class V1::SoundboardsController < ApplicationController
   def update
     @soundboard = Soundboard.find(params[:id])
 
-    if @soundboard.update(params[:soundboard])
+    if @soundboard.update(soundboard_params)
       head :no_content
     else
       render json: @soundboard.errors, status: :unprocessable_entity
@@ -46,5 +46,11 @@ class V1::SoundboardsController < ApplicationController
     @soundboard.destroy
 
     head :no_content
+  end
+
+  private
+
+  def soundboard_params
+    params.require(:soundboard).permit(:name)
   end
 end
