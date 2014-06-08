@@ -1,5 +1,6 @@
 var SoundboardModel = DS.Model.extend({
-  name:               DS.attr('string'),
+  name:                 DS.attr('string'),
+  track:                DS.hasMany('track'),
   createdAt:            DS.attr('date'),
   updatedAt:            DS.attr('date'),
 });

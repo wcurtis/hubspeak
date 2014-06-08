@@ -1,5 +1,6 @@
 var TrackModel = DS.Model.extend({
-  name:               DS.attr('string'),
+  name:                 DS.attr('string'),
+  soundboard:           DS.belongsTo('soundboard'),
   createdAt:            DS.attr('date'),
   updatedAt:            DS.attr('date'),
 });
