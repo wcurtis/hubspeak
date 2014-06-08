@@ -14,6 +14,12 @@ gem 'rack-cors', '~> 0.2.0'
 
 gem 'pusher'
 
+gem 'paperclip'
+
+gem 'paperclip-meta'
+
+gem 'aws-sdk', '~> 1.5.7'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
