@@ -19,5 +19,19 @@ module Yonderlist
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    
+    # Allow access from anyone for now
+    # TODO: Lock this down to only yonderlist domains
+    # See https://github.com/cyu/rack-cors
+    #
+    # NOTE: In order to have headers preserved when raising a 500 error, we have to do the insert_after
+    # See: http://stackoverflow.com/a/21906977/540194
+    config.middleware.insert_after Rails::Rack::Logger, Rack::Cors, :logger => Rails.logger do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :put, :patch, :delete, :options]
+      end
+    end
+    
   end
 end
