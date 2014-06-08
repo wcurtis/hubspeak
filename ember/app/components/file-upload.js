@@ -1,5 +1,5 @@
 var FileUploadComponent = Ember.FileField.extend({
-  url: '/v1/soundbites',
+  url: 'soundbites',
 
   /**
    * Pass in with the component definition
@@ -8,7 +8,7 @@ var FileUploadComponent = Ember.FileField.extend({
 
   filesDidChange: (function() {
     var self = this;
-    var uploadUrl = this.get('url');
+    var uploadUrl = ENV.API_BASE_URL + '/' + this.get('url');
     var files = this.get('files');
 
     var uploader = Ember.Uploader.create({

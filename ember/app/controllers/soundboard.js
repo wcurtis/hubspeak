@@ -26,7 +26,7 @@ var SoundboardController = Ember.ObjectController.extend({
       }, function(error) {
         throw error;
       });
-    }
+    },
   }
 
 });
