@@ -7,6 +7,10 @@ var SoundboardRoute = Ember.Route.extend({
   setupController: function(controller, model) {
     this._super(controller, model);
 
+    this.store.find('soundbite', 1).then(function(soundbite) {
+      controller.set('soundbite', soundbite);
+    });
+
     // Subscribe to pusher
     this.controllerFor('pusher').subscribeSoundboard(model, function(data) {
       controller.playTrack(data.track_id);

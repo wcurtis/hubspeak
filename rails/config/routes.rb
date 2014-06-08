@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :v1 do
     resources :tracks, except: [:new, :edit]
     resources :soundboards, except: [:new, :edit]
+    resources :soundbites, except: [:new, :edit]
 
     get 'tracks/:id/play' => 'tracks#play'
   end

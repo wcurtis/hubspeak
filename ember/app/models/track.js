@@ -1,7 +1,8 @@
 var TrackModel = DS.Model.extend({
   name:                 DS.attr('string'),
   soundboard:           DS.belongsTo('soundboard'),
-  playCount:           DS.attr('number', {
+  soundbite:            DS.belongsTo('soundbite'),
+  playCount:            DS.attr('number', {
     defaultValue: 0
   }),
   createdAt:            DS.attr('date'),

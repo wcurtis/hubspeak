@@ -18,10 +18,19 @@
       </tr>
     </thead>
     <tbody>
-      {{#each track in tracks}}
+      {{#each track in tracks itemController="track"}}
       <tr>
         <td>{{track.name}}</td>
-        <td><div class="btn btn-default"><span class="glyphicon glyphicon-volume-up"></span> Add Audio</div></td>
+        <td>
+          {{#if hasSoundbite}}
+            <div class="btn btn-default" {{action 'preview'}}><span class="glyphicon glyphicon-volume-up"></span> Preview</div>
+          {{else}}
+            {{file-upload 
+              action="didUploadFile"
+              trackId=track.id
+            }}
+          {{/if}}
+        </td>
         <td>{{track.playCount}} plays</td>
       </tr>
       {{/each}}
