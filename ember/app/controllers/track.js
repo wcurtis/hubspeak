@@ -24,7 +24,7 @@ var TrackController = Ember.ObjectController.extend({
     },
 
     preview: function() {
-      this.send('playTrack', this.get('id'));
+      this.send('playTrack', this.get('id'), false);
     }
   }
 
