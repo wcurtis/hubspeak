@@ -2,6 +2,10 @@
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
+// Added for static broccoli compiling http://iamstef.net/ember-cli/
+var mergeTrees = require('broccoli-merge-trees');
+var pickFiles = require('broccoli-static-compiler');
+
 var app = new EmberApp({
   name: require('./package.json').name,
 
@@ -44,5 +48,12 @@ app.import('vendor/ic-ajax/dist/named-amd/main.js', {
   ]
 });
 
+// This adds bootstrap fonts into the asset pipeline
+// They're accessible publicly at /assets/fonts/bootstrap/glyphicons-halflings-regular.woff
+var extraAssets = pickFiles('vendor/bootstrap/fonts', {
+   srcDir: '/',
+   files: ['**/*.woff', '**/*.eot', '**/*.svg', '**/*.ttf'],
+   destDir: '/assets/fonts'
+});
 
-module.exports = app.toTree();
+module.exports = mergeTrees([app.toTree(), extraAssets]);

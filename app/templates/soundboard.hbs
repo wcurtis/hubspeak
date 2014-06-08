@@ -1,6 +1,30 @@
 <div class="soundboard-template">
-  <h2>Soundboard {{name}}</h2>
-  {{#each track in tracks}}
-    <div>{{track.name}}</div>
-  {{/each}}
+  <div class="heading">
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 left">
+        <h2>Soundboard {{id}}</h2>
+      </div>
+      <div class="col-xs-6 col-sm-6 right">
+        <a class="btn btn-primary btn-lg" {{action 'addTrack'}}>Add a New Track</a>
+      </div>
+    </div>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Hubspot Action</th>
+        <th>Sound Bite</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each track in tracks}}
+      <tr>
+        <td>{{track.name}}</td>
+        <td><div class="btn btn-default"><span class="glyphicon glyphicon-volume-up"></span> Add Audio</div></td>
+        <td>{{track.playCount}} plays</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
 </div>
