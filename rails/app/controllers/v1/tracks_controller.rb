@@ -48,6 +48,12 @@ class V1::TracksController < ApplicationController
     head :no_content
   end
 
+  def play
+    render json: {
+      :success => true
+    }
+  end
+
   private
 
   def track_params

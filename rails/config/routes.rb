@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   namespace :v1 do
     resources :tracks, except: [:new, :edit]
     resources :soundboards, except: [:new, :edit]
+
+    get 'tracks/:id/play' => 'tracks#play'
   end
   
   # The priority is based upon order of creation: first created -> highest priority.
