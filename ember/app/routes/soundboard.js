@@ -15,7 +15,7 @@ var SoundboardRoute = Ember.Route.extend({
 
   actions: {
     willTransition: function(transition) {
-      debugger;
+      this.controllerFor('pusher').unsubscribeSoundboard();
     }
   }
 });
