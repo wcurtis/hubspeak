@@ -23,7 +23,7 @@
         <td>{{track.name}}</td>
         <td>
           {{#if hasSoundbite}}
-            <div class="btn btn-default"><span class="glyphicon glyphicon-volume-up"></span> Add Audio</div>
+            <div class="btn btn-default" {{action 'preview'}}><span class="glyphicon glyphicon-volume-up"></span> Preview</div>
           {{else}}
             {{file-upload 
               action="didUploadFile"
