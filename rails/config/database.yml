@@ -8,8 +8,8 @@ default: &default
 
 development:
   <<: *default
-  database: yonderlist
+  database: hubspeak
 
 test:
   <<: *default
-  database: yonderlist_test
+  database: hubspeak_test
