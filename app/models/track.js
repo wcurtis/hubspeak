@@ -8,7 +8,15 @@ var TrackModel = DS.Model.extend({
 TrackModel.FIXTURES = [
   {
     id: 1,
-    name: "Test Track",
+    soundboard: 1,
+    name: "Test Track1",
+    createdAt: "2014-05-23T18:21:19.000Z",
+    updatedAt: "2014-05-23T18:21:19.000Z",
+  },
+  {
+    id: 2,
+    soundboard: 1,
+    name: "Test Track2",
     createdAt: "2014-05-23T18:21:19.000Z",
     updatedAt: "2014-05-23T18:21:19.000Z",
   },

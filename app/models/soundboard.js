@@ -1,6 +1,6 @@
 var SoundboardModel = DS.Model.extend({
   name:                 DS.attr('string'),
-  track:                DS.hasMany('track'),
+  tracks:               DS.hasMany('track', { async: true }),
   createdAt:            DS.attr('date'),
   updatedAt:            DS.attr('date'),
 });
@@ -11,6 +11,7 @@ SoundboardModel.FIXTURES = [
     name: "Test Soundboard",
     createdAt: "2014-05-23T18:21:19.000Z",
     updatedAt: "2014-05-23T18:21:19.000Z",
+    tracks: [1,2]
   },
 ];
 

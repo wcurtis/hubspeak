@@ -1,3 +1,6 @@
 <div class="soundboard-template">
   <h2>Soundboard {{name}}</h2>
+  {{#each track in tracks}}
+    <div>{{track.name}}</div>
+  {{/each}}
 </div>
