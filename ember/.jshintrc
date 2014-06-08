@@ -10,7 +10,8 @@
     "$": true,
     "ENV": true,
     "module": true,
-    "Pusher": true
+    "Pusher": true,
+    "Audio": true
   },
   "node" : false,
   "browser" : false,
