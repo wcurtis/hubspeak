@@ -13,10 +13,7 @@ var TrackController = Ember.ObjectController.extend({
     },
 
     preview: function() {
-      var soundbite = this.get('model').get('soundbite');
-      var audio = new Audio(soundbite.get('url'));
-
-      audio.play();
+      this.send('playTrack', this.get('model'));
     }
   }
 
