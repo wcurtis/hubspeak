@@ -3,8 +3,7 @@ class Soundbite < ActiveRecord::Base
 
   has_attached_file :audio
 
-  # TODO: Add audio file validation
-  # validates_attachment_content_type :file, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :audio, :content_type => ['audio/mp3']
 
   validates :audio, :attachment_presence => true
   validates_with AttachmentPresenceValidator, :attributes => :audio

@@ -51,6 +51,7 @@ class V1::SoundbitesController < ApplicationController
   private
 
   def soundbite_params
-    params.require(:soundbite).permit(:file, :track_id)
+    # Not wrapped in root node to make it easier for form data to post
+    params.permit(:audio, :track_id)
   end
 end
