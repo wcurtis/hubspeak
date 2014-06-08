@@ -22,11 +22,14 @@
       <tr>
         <td>{{track.name}}</td>
         <td>
-          {{file-upload 
-            action="didUploadFile"
-            trackId=track.id
-          }}
-          <div class="btn btn-default"><span class="glyphicon glyphicon-volume-up"></span> Add Audio</div>
+          {{#if hasSoundbite}}
+            <div class="btn btn-default"><span class="glyphicon glyphicon-volume-up"></span> Add Audio</div>
+          {{else}}
+            {{file-upload 
+              action="didUploadFile"
+              trackId=track.id
+            }}
+          {{/if}}
         </td>
         <td>{{track.playCount}} plays</td>
       </tr>
