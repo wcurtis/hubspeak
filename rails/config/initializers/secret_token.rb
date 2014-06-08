@@ -16,4 +16,4 @@
 # Using secret_token for rails3 compatibility. Change to secret_key_base
 # to avoid deprecation warning.
 # Can be safely removed in a rails3 api-only application.
-Yonderlist::Application.config.secret_token = 'df31adb19a0edb6b8b0ef398ffccfefd0a6825af1ba6e01241b04ca5799b3238876866a8a862abe23f7affab7a9cdc0af8ff39669c26e9cb2c989235be904c61'
+Hubspeak::Application.config.secret_token = 'df31adb19a0edb6b8b0ef398ffccfefd0a6825af1ba6e01241b04ca5799b3238876866a8a862abe23f7affab7a9cdc0af8ff39669c26e9cb2c989235be904c61'

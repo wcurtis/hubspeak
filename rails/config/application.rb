@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Yonderlist
+module Hubspeak
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -21,7 +21,7 @@ module Yonderlist
     # config.i18n.default_locale = :de
     
     # Allow access from anyone for now
-    # TODO: Lock this down to only yonderlist domains
+    # TODO: Lock this down to only hubspeak domains
     # See https://github.com/cyu/rack-cors
     #
     # NOTE: In order to have headers preserved when raising a 500 error, we have to do the insert_after
