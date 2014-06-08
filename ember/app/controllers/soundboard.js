@@ -12,9 +12,13 @@ var SoundboardController = Ember.ObjectController.extend({
 
       var soundboard = this.get('model');
 
+      // TODO: This will be uploaded
+      var soundbite = this.get('soundbite');
+
       var track = this.store.createRecord('track', {
         name: 'New Track',
         soundboard: soundboard,
+        soundbite: soundbite
       });
 
       track.save().then(function(track) {
