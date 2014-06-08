@@ -1,4 +1,4 @@
-class SoundboardsController < ApplicationController
+class V1::SoundboardsController < ApplicationController
   # GET /soundboards
   # GET /soundboards.json
   def index
@@ -21,7 +21,7 @@ class SoundboardsController < ApplicationController
     @soundboard = Soundboard.new(params[:soundboard])
 
     if @soundboard.save
-      render json: @soundboard, status: :created, location: @soundboard
+      render json: @soundboard, status: :created, location: [:v1, @soundboard]
     else
       render json: @soundboard.errors, status: :unprocessable_entity
     end

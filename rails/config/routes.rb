@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  resources :tracks, except: [:new, :edit]
-  resources :soundboards, except: [:new, :edit]
+
+  namespace :v1 do
+    resources :tracks, except: [:new, :edit]
+    resources :soundboards, except: [:new, :edit]
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

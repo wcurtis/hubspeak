@@ -1,4 +1,4 @@
-class TracksController < ApplicationController
+class V1::TracksController < ApplicationController
   # GET /tracks
   # GET /tracks.json
   def index
@@ -21,7 +21,7 @@ class TracksController < ApplicationController
     @track = Track.new(params[:track])
 
     if @track.save
-      render json: @track, status: :created, location: @track
+      render json: @track, status: :created, location: [:v1, @track]
     else
       render json: @track.errors, status: :unprocessable_entity
     end
