@@ -17,14 +17,18 @@ var PusherController = Ember.Controller.extend({
     this.set('pusher', new Pusher('28b453ca5257ab58a0f2'));
   },
 
-  subscribeSoundboard: function(soundboard, callback) {
+  subscribeSoundboard: function(soundboard) {
+
+    var self = this;
 
     // Unsub channel if one is currently registered
     // (should be cleaned up prior by the route though)
     this.unsubscribeSoundboard(soundboard);
 
     var channel = this.get('pusher').subscribe('soundboard_' + soundboard.get('id'));
-    channel.bind('play_track', callback);
+    channel.bind('play_track', function(data) {
+      self.send('playTrack', data.track_id);
+    });
 
     this.set('channel', channel);
   },
