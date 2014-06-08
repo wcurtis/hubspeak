@@ -1,5 +1,14 @@
 <div class="soundboard-template">
-  <h2>Soundboard {{id}}</h2>
+  <div class="heading">
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 left">
+        <h2>Soundboard {{id}}</h2>
+      </div>
+      <div class="col-xs-6 col-sm-6 right">
+        <a class="btn btn-primary btn-lg" {{action 'addTrack'}}>Add a New Track</a>
+      </div>
+    </div>
+  </div>
   <table class="table">
     <thead>
       <tr>
@@ -18,7 +27,4 @@
       {{/each}}
     </tbody>
   </table>
-  <div class="actions">
-    <a class="btn btn-primary btn-lg" {{action 'addTrack'}}>Add a New Track</a>
-  </div>
 </div>
