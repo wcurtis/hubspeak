@@ -25,11 +25,17 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    ENV.API_HOST = "http://local-api.hubspeak.com:7000";
+    ENV.API_NAMESPACE = "v1";
   }
 
   if (environment === 'production') {
-
+    ENV.API_HOST = "http://api.hubspeak.com";
+    ENV.API_NAMESPACE = "v1";
   }
+
+  ENV.API_BASE_URL = ENV.API_HOST + '/' + ENV.API_NAMESPACE;
 
   return ENV;
 };

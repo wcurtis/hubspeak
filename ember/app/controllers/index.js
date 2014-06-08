@@ -2,14 +2,17 @@ var IndexController = Ember.Controller.extend({
 
   actions: {
     createSoundboard: function() {
-      // var newSoundboard = this.store.createRecord('soundboard', {
-      //   id: 2,
-      //   name: "New board"
-      // });
+      var self = this;
 
-      // TODO: Save board
+      var soundboard = this.store.createRecord('soundboard', {
+        name: "New board"
+      });
 
-      this.transitionToRoute('soundboard', 1);
+      soundboard.save().then(function(soundboard) {
+        self.transitionToRoute('soundboard', soundboard.get('id'));
+      }, function(error) {
+        throw error;
+      });
     }
   }
 
