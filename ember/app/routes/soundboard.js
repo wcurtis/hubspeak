@@ -9,7 +9,7 @@ var SoundboardRoute = Ember.Route.extend({
 
     // Subscribe to pusher
     this.controllerFor('pusher').subscribeSoundboard(model, function(data) {
-      debugger;
+      controller.playTrack(data.track_id);
     });
   },
 

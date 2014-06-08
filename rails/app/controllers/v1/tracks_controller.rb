@@ -52,7 +52,7 @@ class V1::TracksController < ApplicationController
     @track = Track.find(params[:id])
 
     Pusher["soundboard_#{@track.soundboard_id}"].trigger('play_track', {
-      track_id: @track.id
+      track_id: @track.id.to_s
     })
 
     render json: {
