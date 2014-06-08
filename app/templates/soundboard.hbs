@@ -1,5 +1,5 @@
 <div class="soundboard-template">
-  <h2>Soundboard {{name}}</h2>
+  <h2>Soundboard {{id}}</h2>
   <table class="table">
     <thead>
       <tr>
@@ -13,7 +13,7 @@
       <tr>
         <td>{{track.name}}</td>
         <td><div class="btn btn-default"><span class="glyphicon glyphicon-volume-up"></span> Add Audio</div></td>
-        <td>8 plays</td>
+        <td>{{track.playCount}} plays</td>
       </tr>
       {{/each}}
     </tbody>
