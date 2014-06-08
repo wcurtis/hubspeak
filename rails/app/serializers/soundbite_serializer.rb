@@ -1,5 +1,5 @@
 class SoundbiteSerializer < ActiveModel::Serializer
-  attributes :id, :name, :url
+  attributes :id, :name, :url, :file_name
   has_one :track
 
   def url
@@ -10,6 +10,10 @@ class SoundbiteSerializer < ActiveModel::Serializer
     end
 
     result
+  end
+
+  def file_name
+    object.audio_file_name
   end
 
   embed :ids, include: false

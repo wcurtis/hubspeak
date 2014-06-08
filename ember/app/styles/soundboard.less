@@ -22,10 +22,25 @@
     }
   }
 
+  // This keeps our text and buttons vertical aligned
+  .table > tbody > tr > td {
+    line-height: 36px;
+  }
+
   .table {
     th.actions {
       width: 100px;
+      text-align: right;
     }
+
+    td input {
+      line-height: normal;
+      padding-top: 8px;
+    }
+
+    .file-name {
+      padding-left: 8px;
+    } 
   }
 }
 

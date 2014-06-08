@@ -2,6 +2,7 @@ var SoundbiteModel = DS.Model.extend({
   name:       DS.attr('string'),
   track:      DS.belongsTo('track'),
   url:        DS.attr('string'),
+  fileName:   DS.attr('string'),
   duration:   DS.attr('number'),
 });
 

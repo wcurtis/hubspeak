@@ -6,6 +6,13 @@ var TrackController = Ember.ObjectController.extend({
 
   actions: {
     didUploadFile: function(data) {
+
+      // Since we're not going through the serializer, we have
+      // to convert the keys to camelcase ourselves
+      // TODO: Tap into the serializer somehow
+      data.soundbite.fileName = data.soundbite.file_name;
+      data.soundbite.playCount = data.soundbite.play_count;
+
       var soundbite = this.store.createRecord('soundbite', data.soundbite);
       var track = this.get('model');
 

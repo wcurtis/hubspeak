@@ -21,10 +21,10 @@
     <tbody>
       {{#each track in tracks itemController="track"}}
       <tr>
-        <td>{{track.name}}</td>
+        <td><span>{{track.name}}</span></td>
         <td>
           {{#if hasSoundbite}}
-            <div class="btn btn-default" {{action 'preview'}}><span class="glyphicon glyphicon-volume-up"></span> Preview</div>
+            <a class="btn btn-default" {{action 'preview'}}><span class="glyphicon glyphicon-volume-up"></span> Preview</a> <span class="file-name">{{track.soundbite.fileName}}</span>
           {{else}}
             {{file-upload 
               action="didUploadFile"
@@ -32,7 +32,7 @@
             }}
           {{/if}}
         </td>
-        <td>{{track.playCount}} plays</td>
+        <td><span>{{track.playCount}} plays</span></td>
         <td>
           <div class="btn-group">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
