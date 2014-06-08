@@ -49,11 +49,12 @@ class V1::TracksController < ApplicationController
   end
 
   def play
+    @track = Track.find(params[:id])
 
-    Pusher['test_channel'].trigger('my_event', {
-      message: 'hello world'
+    Pusher["soundboard_#{@track.soundboard_id}"].trigger('play_track', {
+      track_id: @track.id
     })
-    
+
     render json: {
       :success => true
     }

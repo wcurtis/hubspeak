@@ -16,6 +16,7 @@
     "ember-cli-test-loader": "rjackson/ember-cli-test-loader#0.0.2",
     "bootstrap": "~3.1.1",
     "bootswatch": "~3.1.1+1",
-    "less-elements": "*"
+    "less-elements": "*",
+    "pusher": "~2.2.1"
   }
 }

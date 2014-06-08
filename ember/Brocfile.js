@@ -19,6 +19,7 @@ var app = new EmberApp({
 
 // Use this to add additional libraries to the generated output files.
 app.import('vendor/ember-data/ember-data.js');
+app.import('vendor/pusher/dist/pusher.js');
 
 // Bootstrap JS
 app.import('vendor/bootstrap/js/affix.js');
