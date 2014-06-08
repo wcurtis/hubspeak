@@ -11,12 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140608151026) do
+ActiveRecord::Schema.define(version: 20140608151815) do
 
   create_table "soundboards", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "tracks", force: true do |t|
+    t.integer  "soundboard_id"
+    t.string   "name"
+    t.integer  "play_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tracks", ["soundboard_id"], name: "index_tracks_on_soundboard_id", using: :btree
 
 end
