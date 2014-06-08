@@ -49,6 +49,11 @@ class V1::TracksController < ApplicationController
   end
 
   def play
+
+    Pusher['test_channel'].trigger('my_event', {
+      message: 'hello world'
+    })
+    
     render json: {
       :success => true
     }
