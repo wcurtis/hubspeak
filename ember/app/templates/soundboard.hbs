@@ -2,7 +2,8 @@
   <div class="heading">
     <div class="row">
       <div class="col-xs-6 col-sm-6 left">
-        <h2>Soundboard {{id}}</h2>
+        
+        <h2>{{#link-to 'index'}}<span class="glyphicon glyphicon-home home"></span>{{/link-to}}Soundboard {{id}}</h2>
       </div>
       <div class="col-xs-6 col-sm-6 right">
         <a class="btn btn-primary btn-lg" {{action 'addTrack'}}>Add a New Track</a>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140608193945) do
+ActiveRecord::Schema.define(version: 20140608231944) do
 
   create_table "soundbites", force: true do |t|
     t.integer  "track_id"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 20140608193945) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "track_plays", force: true do |t|
+    t.integer  "track_id"
+    t.string   "ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "track_plays", ["track_id"], name: "index_track_plays_on_track_id", using: :btree
 
   create_table "tracks", force: true do |t|
     t.integer  "soundboard_id"

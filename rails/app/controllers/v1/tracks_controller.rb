@@ -51,6 +51,11 @@ class V1::TracksController < ApplicationController
   def play
     @track = Track.find(params[:id])
 
+    TrackPlay.create({
+      :track  => @track,
+      :ip     => request.remote_ip
+    })
+
     Pusher["soundboard_#{@track.soundboard_id}"].trigger('play_track', {
       track_id: @track.id.to_s
     })
