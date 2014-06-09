@@ -23,7 +23,7 @@
     <tbody>
       {{#each track in tracks itemController="track"}}
       <tr>
-        <td><span>{{track.name}}</span></td>
+        <td><span>Track {{track.id}}</span></td>
         <td>
           {{#if hasSoundbite}}
             <a class="btn btn-default" {{action 'preview'}}><span class="glyphicon glyphicon-volume-up"></span> Preview</a> <span class="file-name">{{track.soundbite.fileName}}</span>

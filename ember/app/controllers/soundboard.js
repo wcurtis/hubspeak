@@ -18,7 +18,6 @@ var SoundboardController = Ember.ObjectController.extend({
       var soundbite = this.get('soundbite');
 
       var track = this.store.createRecord('track', {
-        name: 'New Track',
         soundboard: soundboard,
         soundbite: soundbite
       });
