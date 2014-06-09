@@ -17,3 +17,6 @@
 
 # Paperclip local uploads
 /public/system
+
+# FOrement env vars
+/.env
