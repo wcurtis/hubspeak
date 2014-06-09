@@ -36,5 +36,11 @@ module Hubspeak
     Pusher.app_id = ENV['PUSHER_APP_ID']
     Pusher.key = ENV['PUSHER_KEY']
     Pusher.secret = ENV['PUSHER_SECRET']
+
+    # Middleware for serving static ember files before all else
+    # All www subdomain calls will check this, otherwise render index.html
+    # TODO: Add conditional on this middleware for specific subdomain of www or @
+    path = "#{config.root}/public_ember"
+    config.middleware.insert_before ActionDispatch::Static, "EmberDispatch::Static", path
   end
 end
