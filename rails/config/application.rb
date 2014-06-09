@@ -37,6 +37,12 @@ module Hubspeak
     Pusher.key = ENV['PUSHER_KEY']
     Pusher.secret = ENV['PUSHER_SECRET']
 
+    # Custom directories with classes and modules you want to be autoloadable.
+    # config.autoload_paths += %W(#{config.root}/extras)
+    # Source: http://stackoverflow.com/a/3962321/540194
+    config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
+
     # Middleware for serving static ember files before all else
     # All www subdomain calls will check this, otherwise render index.html
     # TODO: Add conditional on this middleware for specific subdomain of www or @
