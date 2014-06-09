@@ -25,6 +25,12 @@ var TrackController = Ember.ObjectController.extend({
 
     preview: function() {
       this.send('playTrack', this.get('id'), false);
+    },
+
+    showSetup: function() {
+      this.send('openModal', 'guide', {
+        track: this.get('model')
+      });
     }
   }
 
