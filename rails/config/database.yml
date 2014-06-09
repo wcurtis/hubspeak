@@ -13,3 +13,7 @@ development:
 test:
   <<: *default
   database: hubspeak_test
+
+production:
+  <<: *default
+  database: hubspeak
