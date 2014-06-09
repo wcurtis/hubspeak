@@ -20,6 +20,9 @@ gem 'paperclip-meta'
 
 gem 'aws-sdk', '~> 1.5.7'
 
+# For heroku logging https://devcenter.heroku.com/articles/rails4
+gem 'rails_12factor', group: :production
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
