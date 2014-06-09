@@ -28,9 +28,7 @@ var TrackController = Ember.ObjectController.extend({
     },
 
     showSetup: function() {
-      this.send('openModal', 'guide', {
-        track: this.get('model')
-      });
+      this.send('openModal', 'guide', this.get('model'));
     }
   }
 

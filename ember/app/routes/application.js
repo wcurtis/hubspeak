@@ -19,11 +19,14 @@ var ApplicationRoute = Ember.Route.extend({
     },
 
     // Source http://emberjs.com/guides/cookbook/user_interface_and_interaction/using_modal_dialogs/
-    openModal: function(modalName, data) {
+    openModal: function(modalName, model) {
+
+      this.controllerFor(modalName).set('content', model);
+
       return this.render(modalName, {
         into: 'application',
         outlet: 'modal',
-        controller: modalName
+        controller: modalName,
       });
     },
 

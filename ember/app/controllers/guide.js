@@ -1,4 +1,4 @@
-var GuideController = Ember.Controller.extend({
+var GuideController = Ember.ObjectController.extend({
 
 });
 

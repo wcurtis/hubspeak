@@ -7,6 +7,10 @@ var TrackModel = DS.Model.extend({
   }),
   createdAt:            DS.attr('date'),
   updatedAt:            DS.attr('date'),
+
+  playUrl: function() {
+    return ENV.API_BASE_URL + '/tracks/' + this.get('id') + '/play';
+  }.property('id')
 });
 
 TrackModel.FIXTURES = [
