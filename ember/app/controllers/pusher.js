@@ -14,7 +14,7 @@ var PusherController = Ember.Controller.extend({
 
   init: function() {
     this._super();
-    this.set('pusher', new Pusher('28b453ca5257ab58a0f2'));
+    this.set('pusher', new Pusher(ENV.PUSHER_KEY));
   },
 
   subscribeSoundboard: function(soundboard) {

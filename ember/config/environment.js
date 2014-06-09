@@ -28,11 +28,14 @@ module.exports = function(environment) {
 
     ENV.API_HOST = "http://local-api.hubspeak.com:7000";
     ENV.API_NAMESPACE = "v1";
+
+    ENV.PUSHER_KEY = '28b453ca5257ab58a0f2';
   }
 
   if (environment === 'production') {
     ENV.API_HOST = "http://api.hubspeak.com";
     ENV.API_NAMESPACE = "v1";
+    ENV.PUSHER_KEY = '63f873599c53636fe1b2';
   }
 
   ENV.API_BASE_URL = ENV.API_HOST + '/' + ENV.API_NAMESPACE;

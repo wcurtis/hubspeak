@@ -5,7 +5,6 @@ var IndexController = Ember.Controller.extend({
       var self = this;
 
       var soundboard = this.store.createRecord('soundboard', {
-        name: "New board"
       });
 
       soundboard.save().then(function(soundboard) {
