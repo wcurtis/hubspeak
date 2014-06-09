@@ -32,8 +32,5 @@ module Hubspeak
         resource '*', :headers => :any, :methods => [:get, :post, :put, :patch, :delete, :options]
       end
     end
-
-    config.assets.enabled = false
-    
   end
 end
